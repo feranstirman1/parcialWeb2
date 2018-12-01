@@ -1,8 +1,14 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+#header-pagina{
+  background-color: #f8f990;
+  height: 6em;
+  padding-top: 25px;
+  margin-bottom: 25px;
+}
+#header-pagina h1{
+  font-family: 'Kaushan Script', cursive;
+  color: #002a6d;
 }
 
-a {
-  color: #00B7FF;
+#form-row{
+  margin: 0 auto 0 auto;
 }

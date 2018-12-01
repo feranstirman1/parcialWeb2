@@ -29,11 +29,11 @@ segurosController.updateSeguro = async function(req,res){
     let id = req.params.id;
     try {
         await Seguro.updateOne({_id:id},req.body);
-        return res.status(200).json({message:"se ha actualizado un seguro"});
+        return res.status(200).json({message:"se ha actualizado un seguro",status:"200"});
     } catch (error) {
         console.log("esto no esta sirviendo");
         console.log(error);
-        return res.status(500).json({message:"no se pudo actualizar el seguro"});
+        return res.status(500).json({message:"no se pudo actualizar el seguro",status:"500"});
     }
 }
 
@@ -46,9 +46,9 @@ segurosController.ingresarSeguro = async function(req,res){
 
     try {
         await seguro.save();
-        return res.status(200).json({message:"el seguro se ha guardado con exito"});
+        return res.status(200).json({message:"el seguro se ha guardado con exito",status:"200"});
     } catch (error) {
-        return res.status(500).json({message:"no se ha podido guardar el seguro"});
+        return res.status(500).json({message:"no se ha podido guardar el seguro",status:"500"});
     }
 }
 
@@ -57,9 +57,9 @@ segurosController.eliminarSeguro = async function(req,res){
     let id = req.params.id;
     try {
         await Seguro.remove({_id:id});
-        return res.status(200).json({message:"el seguro se ha borrado con exito"});
+        return res.status(200).json({message:"el seguro se ha borrado con exito",status:"200"});
     } catch (error) {
-        return res.status(500).json({error:error});
+        return res.status(500).json({error:error,status:"500"});
     }
 }
 

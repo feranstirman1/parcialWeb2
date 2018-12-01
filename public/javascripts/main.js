@@ -57,8 +57,8 @@ function seguros(){
             <td>${seguro.tipo}</td>
             <td>${seguro.vigencia}</td>
             <td>
-              <a href="/api/Seguros/${seguro._id}" class="delete btn btn-danger">Eliminar</a>
-              <a data-toggle="modal" data-target="#modalUpdate" href="/api/Seguros/${seguro._id}" class="update btn btn-success">Actualizar</a>
+            <a data-toggle="modal" data-target="#modalUpdate" href="/api/Seguros/${seguro._id}" class="update btn btn-success"><i class="fas fa-pencil-alt"></i></a>
+            <a href="/api/Seguros/${seguro._id}" class="delete btn btn-danger"><i class="fas fa-times"></i></a>
             </td>
           </tr>`
         });
