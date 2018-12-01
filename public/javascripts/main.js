@@ -25,11 +25,12 @@ document.querySelector('#formSeguros').addEventListener("submit",function(e){
 
 //para el update
 document.querySelector('#btnUpdate').addEventListener("click",function(e){
+    console.log(document.forms.formUpdate.codigoU.value);
     let seguro ={
         codigo : document.forms.formUpdate.codigoU.value,
-        tipo: document.forms.formUpdate.tipo.value,
-        vigencia : document.forms.formUpdate.vigencia.value
-    }
+        tipo: document.forms.formUpdate.tipoU.value,
+        vigencia : document.forms.formUpdate.vigenciaU.value
+    };
     fetch('/api/Seguros/'+document.forms.formUpdate.idU.value,{
         method:"PUT",
         body: JSON.stringify(seguro),
@@ -71,7 +72,7 @@ function seguros(){
                 fetch(url,{
                     method:"GET"
                 }).then(res=>res.json()).then(seguro=>{
-                    console.log(seguro);
+                    console.log(seguro[0]);
                     document.forms.formUpdate.idU.value=seguro[0]._id;
                     document.forms.formUpdate.codigoU.value = seguro[0].codigo;
                     document.forms.formUpdate.tipoU.value = seguro[0].tipo;

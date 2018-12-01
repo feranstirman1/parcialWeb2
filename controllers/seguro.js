@@ -31,6 +31,7 @@ segurosController.updateSeguro = async function(req,res){
         await Seguro.updateOne({_id:id},req.body);
         return res.status(200).json({message:"se ha actualizado un seguro"});
     } catch (error) {
+        console.log("esto no esta sirviendo");
         console.log(error);
         return res.status(500).json({message:"no se pudo actualizar el seguro"});
     }
